@@ -117,11 +117,11 @@ npm run start:dev
 ```
 
 ## Default Database Credentials
-Host: localhost
-Port: 5433
-Username: postgres
-Password: postgres
-Database: booking
+* Host: localhost
+* Port: 5433
+* Username: postgres
+* Password: postgres
+* Database: booking
 
 ---
 
