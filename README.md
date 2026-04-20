@@ -106,10 +106,22 @@ PATCH /bookings/:id/cancel
 ## Run Project
 
 ```bash
-npm install
+git clone https://github.com/ikampfool/booking-api.git
+cd booking-api
+
+cp .env.example .env
+
 docker-compose up -d
+npm install
 npm run start:dev
 ```
+
+## Default Database Credentials
+Host: localhost
+Port: 5433
+Username: postgres
+Password: postgres
+Database: booking
 
 ---
 
@@ -121,3 +133,27 @@ npm run test:e2e
 ```
 
 ---
+
+## Postman Collection
+postman/booking-api.postman_collection.json
+
+### Create Event
+
+curl -X POST http://localhost:3000/events \
+  -H "Content-Type: application/json" \
+  -d '{"name":"Test Event","maxSeats":2}'
+
+
+---
+
+### Create Booking
+
+curl -X POST http://localhost:3000/bookings \
+  -H "Content-Type: application/json" \
+  -d '{"eventId":1,"userId":1}'
+
+---
+
+### Cancel Booking
+
+curl -X PATCH http://localhost:3000/bookings/1/cancel
